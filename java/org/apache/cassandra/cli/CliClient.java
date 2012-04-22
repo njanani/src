@@ -17,6 +17,7 @@
  */
 package org.apache.cassandra.cli;
 
+import java.io.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -159,14 +160,21 @@ public class CliClient
 
     private CliUserHelp getHelp()
     {
-        if (help == null)
-            help = loadHelp();
-        return help;
+    	try{
+    		if (help == null)
+    			help = loadHelp();
+    		return help;
+    	}
+    	catch(Exception e){
+    			
+    	}
+    	return null;
     }
 
-    private CliUserHelp loadHelp()
+    private CliUserHelp loadHelp() throws Exception
     {
-        final InputStream is = CliClient.class.getClassLoader().getResourceAsStream("org/apache/cassandra/cli/CliHelp.yaml");
+        //final InputStream is = CliClient.class.getClassLoader().getResourceAsStream("org/apache/cassandra/cli/CliHelp.yaml");
+    	final InputStream is = new FileInputStream("/usr/local/cassandra-trunk/src/resources/org/apache/cassandra/cli/CliHelp.yaml");
         assert is != null;
 
         try
