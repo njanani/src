@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /usr/local/cassandra-trunk/src/java/org/apache/cassandra/cql/Cql.g 2012-04-21 21:07:40
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /usr/local/cassandra-trunk/src/java/org/apache/cassandra/cql/Cql.g 2012-04-23 09:09:35
 
     package org.apache.cassandra.cql;
     import org.apache.cassandra.thrift.InvalidRequestException;
